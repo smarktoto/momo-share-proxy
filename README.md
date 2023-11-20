@@ -3,7 +3,7 @@
 此脚本用于提高墨墨背单词单词上限。
 
 墨墨每日分享上限20个。于是我就写了一个自动刷访问量的脚本。
-运行Momo/momo_proxy_useful.py即可，需要注意的是该文件第70行：proxies = self.jl_api('写自己的代码url')将代理换为自己的代理url。
+运行Momo/momo_proxy_useful.py即可，需要注意的是该文件第78行：proxies = self.jl_api('写自己的代码url')将代理换为自己的代理url。
 
 # 忽略后面的所有介绍
 以下为旧版本思路，忽略即可
