@@ -2,6 +2,7 @@
 # 时 间:2023/11/9 21:43
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+import random
 import tkinter
 from tkinter import *
 import hashlib
