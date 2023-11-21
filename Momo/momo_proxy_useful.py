@@ -73,7 +73,7 @@ class MY_GUI():
             try:
                 for i in range(35):
                     if i != 0:
-                        time.sleep(60)
+                        time.sleep(random.randint(60, 120))
                     #换成自己的代理
                     proxies = self.jl_api('写自己的代码url')
                     suc_num = self.run(share_url, suc_num, proxies)
