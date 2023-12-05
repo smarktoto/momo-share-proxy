@@ -37,25 +37,25 @@ async def getheaders():
 # 生成任务列表
 async def taskList(ss):
     task = [
-        create_task(get_page('http://www.kxdaili.com/dailiip/2/1.html', session=ss)),
+        create_task(get_page('http://www.kxdaili.com/dailiip.html', session=ss)),
         create_task(get_page('https://proxy.seofangfa.com/', session=ss)),
-        create_task(get_page('http://www.66ip.cn/areaindex_33/1.html', session=ss)),
-        create_task(get_page('https://www.kuaidaili.com/free/inha/1/', mod=2, session=ss)),
+        create_task(get_page('http://www.66ip.cn', session=ss)),
+        create_task(get_page('https://www.kuaidaili.com/free', mod=2, session=ss)),
         create_task(
-            get_page('https://www.89ip.cn/tqdl.html?num=1000&address=&kill_address=&port=&kill_port=&isp=', mod=8,
+            get_page('https://www.89ip.cn', mod=8,
                      session=ss)),
-        create_task(get_page('https://cdn.jsdelivr.net/gh/parserpp/ip_ports/proxyinfo.txt', mod=-1, session=ss)),
+        create_task(get_page('https://cdn.jsdelivr.net/gh/parserpp/ip_ports@master/proxyinfo.txt', mod=-1, session=ss)),
         create_task(
             get_page('https://fastly.jsdelivr.net/gh/parserpp/ip_ports@main/proxyinfo.txt', mod=-1, session=ss)),
-        create_task(get_page('https://www.kuaidaili.com/free/intr/2/', mod=2, session=ss)),
+        create_task(get_page('https://www.kuaidaili.com/free', mod=2, session=ss)),
         create_task(get_page('https://www.proxy-list.download/api/v1/get?type=http', mod=3, session=ss)),
     ]
 
     for i in range(1, 4):
-        task.append(create_task(get_page(f'http://www.nimadaili.com/http/{i}/', mod=4, session=ss)))
-        task.append(create_task(get_page(f'https://www.89ip.cn/index_{i}.html', session=ss)))
-        task.append(create_task(get_page(f'http://http.taiyangruanjian.com/free/page{i}/', mod=1, session=ss)))
-        task.append(create_task(get_page(f'http://www.kxdaili.com/dailiip/1/{i}.html', session=ss)))
+        task.append(create_task(get_page(f'http://www.nimadaili.com', mod=4, session=ss)))
+        task.append(create_task(get_page(f'https://www.89ip.cn.html', session=ss)))
+        task.append(create_task(get_page(f'http://http.taiyangruanjian.com/free', mod=1, session=ss)))
+        task.append(create_task(get_page(f'http://www.kxdaili.com/dailiip.html', session=ss)))
         task.append(create_task(get_page(f'http://www.ip3366.net/free/?stype=1&page={i}', session=ss)))
         task.append(create_task(get_page(f'https://www.dieniao.com/FreeProxy/{i}.html', mod=5, session=ss)))
     return task
