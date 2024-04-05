@@ -4,7 +4,7 @@ from aiohttp import ClientSession, ClientTimeout, TCPConnector
 from ip import ip_main, getheaders
 
 # 可根据自己电脑更改位置
-link_path = "momo_link.txt"
+link_path = "/var/www/tools/momo-share/momo-share-proxy/Momo/momo_link.txt"
 
 
 # 读取文件获取文件内容
@@ -35,7 +35,7 @@ def share_Link():
 
 
 # 设置代理抓取https页面报错问题解决
-asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+#asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 
 
 async def create_aiohttp(url, proxy_list):
@@ -80,9 +80,10 @@ async def page(page_source):
 def main():
     link = share_Link()  # 读取文件里的墨墨分享链接
     print("访问链接:", link)
-    ip_main()  # 抓取代理
+    #ip_main()  # 抓取代理
     proxies = [i.strip() for i in readfile()]  # 生成代理列表
-    asyncio.run(create_aiohttp(link, proxies))
+    loop = asyncio.get_event_loop()
+    loop.run_until_complete(create_aiohttp(link, proxies))
     print("任务完成!!!")
 
     # 呈现程序运行结果。可根据自己电脑更改位置
